@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger King Nusantara</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #35231f;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    .promo {
+      background: #502314;
+      color: #ffba00;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 8px 0;
+      font-weight: bold;
+    }
+
+    .promo span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: jalan 18s linear infinite;
+    }
+
+    @keyframes jalan {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    nav {
+      background: #f5ebdc;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      padding: 13px;
+    }
+
+    nav a {
+      color: #502314;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .hero {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: white;
+      padding: 35px 15px;
+      background:
+        linear-gradient(rgba(30, 16, 13, 0.55), rgba(30, 16, 13, 0.55)),
+        url("https://cdn.phototourl.com/anon/2026-11-18-b10d68d6-5777-4095-8711-744a702c3bed.jpg")
+        center/cover no-repeat;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 44px);
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      color: #ffcf78;
+      font-style: italic;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d62300;
+      color: white;
+      border: 1px solid #ffba00;
+      border-radius: 20px;
+      padding: 9px 18px;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+
+    section { padding: 38px max(6%, 18px); }
+    h2 { text-align: center; margin: 0 0 8px; }
+    .sub { text-align: center; color: #80675f; font-style: italic; margin: 0 0 24px; }
+    #tentang { background: #fff8ed; }
+    .content { max-width: 1050px; margin: auto; }
+
+    .products { background: #f5e4cb; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      text-align: center;
+      padding: 18px;
+      border: 1px solid #dfc8a7;
+    }
+
+    .card img {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    .card p { font-size: 14px; }
+    .price { font-weight: bold; color: #d62300; }
+
+    .video-box {
+      max-width: 600px;
+      margin: auto;
+      color: white;
+      background: #502314;
+    }
+
+    .video-box video {
+      width: 100%;
+      display: block;
+    }
+
+    audio, video { max-width: 100%; }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #765b53;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #502314;
+      color: white;
+    }
+
+    .contact {
+      background: #fff8ed;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    form label {
+      display: block;
+      margin: 10px 0 4px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 9px;
+      border: 1px solid #b9a8a1;
+      border-radius: 3px;
+    }
+
+    textarea { min-height: 90px; }
+
+    button {
+      padding: 9px 15px;
+      margin: 10px 6px 0 0;
+      border: 0;
+      border-radius: 20px;
+      background: #d62300;
+      color: white;
+      cursor: pointer;
+    }
+
+    .map {
+      min-height: 210px;
+      background: #f1dfc4;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer {
+      background: #502314;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      nav { gap: 12px; }
+      nav a { font-size: 11px; }
+      section { padding: 28px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="promo">
+    <span>🔥 PROMO BULAN INI: DISKON 20% UNTUK PEMBELIAN WHOPPER PREMIUM! GRATIS ONGKIR SELURUH INDONESIA! 🔥</span>
+  </div>
+
+  <nav>
+    <a href="#beranda">BERANDA</a>
+    <a href="#tentang">TENTANG KAMI</a>
+    <a href="#video">VIDEO PROFIL</a>
+    <a href="#produk">KATALOG PRODUK</a>
+    <a href="#kemitraan">KEMITRAAN</a>
+    <a href="#kontak">HUBUNGI KAMI</a>
+  </nav>
+
+  <header class="hero" id="beranda">
+    <div>
+      <h1>BURGER KING INDONESIA</h1>
+      <p>"Have It Your Way"</p>
+      <a class="btn" href="#kontak">PESAN SEKARANG</a>
+    </div>
+  </header>
+
+  <section id="tentang">
+    <div class="content">
+      <h2>Tentang Perusahaan</h2>
+      <p>Burger King Indonesia hadir untuk menghadirkan burger premium yang dipanggang langsung menggunakan api unggun. Setiap menu disiapkan dari bahan pilihan dengan cita rasa gurih dan lezat. Kami berkomitmen untuk memberikan pengalaman bersantap yang cepat, nyaman, dan memuaskan bagi setiap pelanggan di seluruh Indonesia.</p>
+      <p>Burger King dikenal sebagai salah satu jaringan restoran cepat saji terbesar di dunia. Dengan proses pemanggangan yang khas, daging disajikan dengan rasa smoky yang nikmat dan dapat disesuaikan dengan pilihan pelanggan.</p>
+
+      <h3>Visi Kami:</h3>
+      <ul>
+        <li>Menjadi restoran burger pilihan utama masyarakat Indonesia.</li>
+        <li>Memberikan pengalaman makan cepat yang berkualitas dan menyenangkan.</li>
+      </ul>
+
+      <h3>Misi Utama:</h3>
+      <ol>
+        <li>Menghadirkan makanan berkualitas dengan standar internasional.</li>
+        <li>Menyajikan menu yang dapat disesuaikan dengan selera pelanggan.</li>
+        <li>Memberikan pelayanan terbaik dan menciptakan suasana ramah keluarga.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="video">
+    <h2>Company Video Profile</h2>
+    <p class="sub">Mengenal lebih dekat Burger King dan menu favorit pelanggan.</p>
+
+    <div class="video-box">
+      <video controls poster="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1000&q=90">
+        <source src="https://cdn.videotourl.net/videos/15c8c3f5-25f5-46ef-a37e-eef32bc47fa5.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+      </video>
+    </div>
+
+    <p class="sub" style="margin-top:22px">
+      Dengarkan musik relaksasi sambil menelusuri website:
+    </p>
+
+    <div style="text-align:center">
+      <audio controls>
+        <source src="https://videotourl.com/audio/1795013067788-d22d3b1e-7de2-4c01-a15a-83182046f7af.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
+    </div>
+  </section>
+
+  <section class="products" id="produk">
+    <h2>Katalog Produk Unggulan</h2>
+    <p class="sub">Pilihan menu burger favorit yang disiapkan dengan sepenuh hati.</p>
+
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=90"
+             alt="Whopper Premium">
+        <h3>Whopper Premium</h3>
+        <p><i>Taste Notes: Smoky, Juicy, Savory.</i></p>
+        <p>Roti empuk dan daging sapi panggang api unggun dengan sayuran segar.</p>
+        <div class="price">Rp 75.000</div>
+        <a class="btn" href="#kontak">Pesan Sekarang</a>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=90"
+             alt="Cheese Double">
+        <h3>Cheese Double</h3>
+        <p><i>Taste Notes: Cheesy, Bold, Rich.</i></p>
+        <p>Dua lapis daging sapi berpadu dengan keju meleleh dan saus spesial.</p>
+        <div class="price">Rp 85.000</div>
+        <a class="btn" href="#kontak">Pesan Sekarang</a>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=90"
+             alt="Chicken Royale">
+        <h3>Chicken Royale</h3>
+        <p><i>Taste Notes: Crispy, Creamy, Mild.</i></p>
+        <p>Daging ayam renyah dengan mayones lembut dalam roti premium.</p>
+        <div class="price">Rp 55.000</div>
+        <a class="btn" href="#kontak">Pesan Sekarang</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="kemitraan">
+    <h2>Daftar Harga &amp; Paket Kemitraan (B2B)</h2>
+
+    <div class="content">
+      <table>
+        <tr>
+          <th rowspan="2">Jenis Menu</th>
+          <th colspan="2">Harga Menu</th>
+          <th rowspan="2">Paket Kemitraan (10 Paket)</th>
+        </tr>
+        <tr>
+          <th>Paket</th>
+          <th>Combo</th>
+        </tr>
+        <tr>
+          <td>Whopper Premium</td>
+          <td>Rp 75.000</td>
+          <td>Rp 95.000</td>
+          <td rowspan="2">Rp 2.500.000 + Gratis Pelatihan Operasional</td>
+        </tr>
+        <tr>
+          <td>Cheese Double</td>
+          <td colspan="1">Rp 85.000</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Chicken Royale</td>
+          <td colspan="2">Rp 55.000 (Harga Pukul Rata Paket/Combo)</td>
+          <td>PAKET CUSTOM (Hubungi Sales)</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="contact" id="kontak">
+    <div>
+      <h2>Formulir Pemesanan &amp; Pertanyaan</h2>
+      <p>Ingin memesan menu atau menjadi mitra? Isi form di bawah ini:</p>
+
+      <form>
+        <label for="nama">Nama Lengkap</label>
+        <input id="nama" type="text" placeholder="Contoh: Budiono siregar">
+
+        <label for="email">Email Bisnis/Pribadi</label>
+        <input id="email" type="email" placeholder="budiono@email.com">
+
+        <label>Tujuan Kontak</label>
+        <input type="radio" name="tujuan" value="eceran" style="width:auto"> Beli Eceran
+        <input type="radio" name="tujuan" value="b2b" style="width:auto"> Beli Grosir / B2B
+
+        <label for="menu">Jenis Menu Diminati</label>
+        <select id="menu">
+          <option>-- Pilih Menu --</option>
+          <option>Whopper Premium</option>
+          <option>Cheese Double</option>
+          <option>Chicken Royale</option>
+        </select>
+
+        <label>Fasilitas (B2B)</label>
+        <input type="checkbox" style="width:auto"> Pelatihan Operasional
+        <input type="checkbox" style="width:auto"> Sewa Peralatan
+
+        <label for="pesan">Pesan Anda</label>
+        <textarea id="pesan" placeholder="Tuliskan pesanan Anda..."></textarea>
+
+        <button type="button" onclick="alert('Terima kasih! Pesanan Anda berhasil dikirim.')">
+          Kirim Pesan
+        </button>
+        <button type="reset">Hapus Data</button>
+      </form>
+    </div>
+
+    <div>
+      <h2>Lokasi Restoran</h2>
+      <p>Kunjungi restoran Burger King terdekat:</p>
+
+      <div class="maps">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.964785844815!2d107.6042454!3d-6.8948156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e65b77f87711%3A0x11e40737bc29bd2d!2sBurger%20King%20Cihampelas%20Walk!5e0!3m2!1sid!2sid!4v1795397926969!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>  <p><b>Alamat:</b> Jl. Cihampelas Walk No.160, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat </p>
+      <p><b>Jam Operasional:</b> Senin - Minggu (10:00 - 22:00 WIB)</p>
+    </div>
+  </section>
+            </iframe>
+        </div>
+    </section>
+
+  <footer>
+    Burger King Indonesia © 2026<br>
+    <i>Final Project Leiss Jadwa Nafie<br>
+    <i>Praktikum Pemrograman Web Dasar HTML</i>
+  </footer>
+</body>
+</html>
